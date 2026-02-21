@@ -51,6 +51,12 @@
         inherit (self.packages.${final.system}) docker-xdg-open;
       };
 
+      # Provide NixOs modules
+      nixosModules = {
+        docker-xdg-open = import ./nix/module.nix;
+        default = self.nixosModules.docker-xdg-open;
+      };
+
       # Generate devShell for each system
       devShells = forEachSupportedSystem ({ pkgs, ... }: import ./nix/devshell.nix { inherit pkgs; });
 
