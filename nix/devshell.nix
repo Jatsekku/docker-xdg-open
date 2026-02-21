@@ -48,27 +48,27 @@ in
   default = pkgs.mkShell {
     # Nix packages provided in environment
     buildInputs = with pkgs; [
-        # CMake build system 
-        cmake
-        # CMake TUI
-        cmakeCurses
-        # CMake GUI
-        #cmakeWithGui
-        # CMake linter
-        cmake-lint
-        # CMake format
-        cmake-format
+      # CMake build system
+      cmake
+      # CMake TUI
+      cmakeCurses
+      # CMake GUI
+      #cmakeWithGui
+      # CMake linter
+      cmake-lint
+      # CMake format
+      cmake-format
 
-        # Doxygen documentation generator
-        doxygen
+      # Doxygen documentation generator
+      doxygen
 
-        # Dynamic glibc
-        glibc
-        # Static glibc
-        glibc.static
+      # Dynamic glibc
+      glibc
+      # Static glibc
+      glibc.static
 
-        # Meson build system
-        meson
+      # Meson build system
+      meson
     ];
 
     # Logic run on environment activation
