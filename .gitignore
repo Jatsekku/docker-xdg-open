@@ -1,2 +1,4 @@
 # CMake artifacts
 build*
+# Nix artifacts
+result*
