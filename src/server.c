@@ -26,7 +26,7 @@ static inline void prepareSocketAddress(struct sockaddr_in *const socket_address
     socket_address->sin_family = AF_INET;
     socket_address->sin_port = htons(port);
 
-    socket_address->sin_addr.s_addr = htonl(INADDR_LOOPBACK);
+    socket_address->sin_addr.s_addr = htonl(INADDR_ANY);
 }
 
 static inline int initSocket(const struct sockaddr_in *const socket_address) {
@@ -135,6 +135,10 @@ int main(void) {
     while(true) {
         // Wait for client
         const int connection_fd = awaitConnection(socket_fd);
+        
+        printf("connected");
+        fflush(stdout);
+
         ssize_t rx_size = receiveString(connection_fd, rx_buffer, sizeof(rx_buffer));
         runXdgOpen(rx_buffer);
         

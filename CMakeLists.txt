@@ -12,7 +12,7 @@ include(GNUInstallDirs)
 
 #---------------------------------- Options -----------------------------------
 # Dynamic/Static executables switch
-option(BUILD_STATIC_CLIENT "Build static client executable" ON)
+option(BUILD_STATIC_CLIENT "Build static client executable" OFF)
 option(BUILD_STATIC_SERVER "Build static server executable" OFF)
 
 #------------------------------- Subdirectories -------------------------------
